@@ -160,9 +160,12 @@ seconds + "s";
 </script>
 <script>
 
+document.addEventListener("DOMContentLoaded", function(){
+
 const scriptURL = "https://script.google.com/macros/s/AKfycbxxj7k3KQ_QBYYOFt0ByGfpAoPhmrIMOiJPg0-ImxM/dev";
 
-document.querySelector("form").addEventListener("submit", e => {
+document.querySelector("form").addEventListener("submit", function(e){
+
 e.preventDefault();
 
 const data = {
@@ -181,6 +184,8 @@ body:JSON.stringify(data)
 })
 .then(res=>{
 document.getElementById("successMsg").style.display="block";
+});
+
 });
 
 });
@@ -247,4 +252,5 @@ document.getElementById("successMsg").style.display="block";
 </body>
 
 </html>
+
 
