@@ -190,36 +190,52 @@ document.getElementById("countdown").innerHTML =
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function(){
-
 const scriptURL="https://script.google.com/macros/s/AKfycbx0nN2YgnoM_eoNJOozq_uYV1LETBvT8dfq1lzqnNm_6Q4QvbLf4wEFjJRftHfL1OrC/exec";
 
-const form=document.getElementById("regForm");
-
-form.addEventListener("submit",function(e){
+document.getElementById("regForm").addEventListener("submit",function(e){
 
 e.preventDefault();
 
-const formData=new FormData(form);
+const file=document.querySelector('input[name="payment"]').files[0];
+
+const reader=new FileReader();
+
+reader.onload=function(){
+
+const base64=reader.result.split(",")[1];
+
+const data={
+team:form.team.value,
+leader:form.leader.value,
+email:form.email.value,
+phone:form.phone.value,
+member2:form.member2.value,
+college:form.college.value,
+department:form.department.value,
+payment:base64,
+fileName:file.name
+};
 
 fetch(scriptURL,{
 method:"POST",
-body:formData
+body:JSON.stringify(data)
 })
 .then(res=>res.text())
 .then(()=>{
 document.getElementById("successMsg").style.display="block";
-form.reset();
-})
-.catch(err=>alert("Submission failed"));
-
+document.getElementById("regForm").reset();
 });
+
+};
+
+reader.readAsDataURL(file);
 
 });
 
 </script>
 </body>
 </html>
+
 
 
 
