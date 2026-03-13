@@ -196,6 +196,8 @@ document.getElementById("regForm").addEventListener("submit",function(e){
 
 e.preventDefault();
 
+const form=document.getElementById("regForm");
+
 const file=document.querySelector('input[name="payment"]').files[0];
 
 const reader=new FileReader();
@@ -223,8 +225,9 @@ body:JSON.stringify(data)
 .then(res=>res.text())
 .then(()=>{
 document.getElementById("successMsg").style.display="block";
-document.getElementById("regForm").reset();
-});
+form.reset();
+})
+.catch(err=>alert("Submission failed"));
 
 };
 
@@ -235,6 +238,7 @@ reader.readAsDataURL(file);
 </script>
 </body>
 </html>
+
 
 
 
