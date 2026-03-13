@@ -164,27 +164,34 @@ document.addEventListener("DOMContentLoaded", function(){
 
 const scriptURL = "https://script.google.com/macros/s/AKfycbx0nN2YgnoM_eoNJOozq_uYV1LETBvT8dfq1lzqnNm_6Q4QvbLf4wEFjJRftHfL1OrC/exec";
 
-document.querySelector("form").addEventListener("submit", function(e){
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(e){
 
 e.preventDefault();
 
+const inputs = document.querySelectorAll("input");
+
 const data = {
-team: document.querySelectorAll("input")[0].value,
-leader: document.querySelectorAll("input")[1].value,
-email: document.querySelectorAll("input")[2].value,
-phone: document.querySelectorAll("input")[3].value,
-member2: document.querySelectorAll("input")[4].value,
-college: document.querySelectorAll("input")[5].value,
-department: document.querySelectorAll("input")[6].value
+team: inputs[0].value,
+leader: inputs[1].value,
+email: inputs[2].value,
+phone: inputs[3].value,
+member2: inputs[4].value,
+college: inputs[5].value,
+department: inputs[6].value
 };
 
 fetch(scriptURL,{
 method:"POST",
 body:JSON.stringify(data)
 })
-.then(res=>{
+.then(response => response.text())
+.then(data => {
 document.getElementById("successMsg").style.display="block";
-});
+form.reset();
+})
+.catch(error => console.error("Error!", error));
 
 });
 
@@ -209,7 +216,7 @@ document.getElementById("successMsg").style.display="block";
 
 <div id="countdown" class="countdown"></div>
 
-<form onsubmit="showSuccess(event)">
+<form>
 
 <label>Team Name</label>
 <input type="text" required>
@@ -252,6 +259,7 @@ document.getElementById("successMsg").style.display="block";
 </body>
 
 </html>
+
 
 
 
