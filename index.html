@@ -168,8 +168,51 @@ box-shadow:0 4px 12px rgba(0,0,0,0.2);
 padding:25px;
 }
 
+.payment-box{
+text-align:center;
+background:#f8fafc;
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
+border:1px solid #e2e8f0;
+}
+
+.qr{
+width:180px;
+margin-top:8px;
+margin-bottom:8px;
+}
+
+.payment-box{
+text-align:center;
+background:#f8fafc;
+padding:15px;
+border-radius:10px;
+margin-bottom:18px;
+border:1px solid #e2e8f0;
+}
+
+.payment-box img{
+width:180px;
+margin:10px 0;
+}
+
 h1{
 font-size:22px;
+}
+
+.payment-box{
+text-align:center;
+background:#f8fafc;
+padding:18px;
+border-radius:12px;
+margin-bottom:20px;
+border:1px solid #e2e8f0;
+}
+
+.payment-box img{
+width:200px;
+margin:10px 0;
 }
 
 h3{
@@ -280,7 +323,16 @@ form.reset();
 👨‍💻 Team Size: 2 Members <br>
 💰 Entry Fee: ₹200 per team
 </div>
+<div class="payment-box">
 
+<h4>Scan to Pay ₹200</h4>
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi%3A%2F%2Fpay%3Fpa%3Dabhishekrupnawar7%40okicici%26pn%3DAI%2520Hackathon%26am%3D200%26cu%3DINR" alt="UPI QR">
+
+<p>UPI ID: abhishekrupnawar7@okicici</p>
+<p>Amount: ₹200 (Auto Filled)</p>
+
+</div>
 <div id="countdown" class="countdown"></div>
 
 <form>
