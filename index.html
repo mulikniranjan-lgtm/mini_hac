@@ -12,94 +12,90 @@ box-sizing:border-box;
 
 body{
 font-family:'Segoe UI',sans-serif;
-background:#ffffff;
-color:#111;
+background:#f4f7fb;
 display:flex;
 justify-content:center;
 align-items:center;
 min-height:100vh;
 margin:0;
+color:#1e293b;
 }
 
 .container{
-background:#0f172a;
-color:white;
-padding:35px;
-border-radius:14px;
-width:430px;
-box-shadow:0 10px 35px rgba(0,0,0,0.3);
+background:#ffffff;
+padding:40px;
+border-radius:16px;
+width:450px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
 .container:hover{
-transform:translateY(-5px);
+transform:translateY(-4px);
 }
 
 h1{
 text-align:center;
 margin-bottom:4px;
-letter-spacing:1px;
+color:#0f172a;
 }
 
 h3{
 text-align:center;
-color:#cbd5f5;
+color:#64748b;
 margin-top:0;
-font-weight:400;
 }
-
-/* Event Info Box */
 
 .event-info{
 text-align:center;
 font-size:14px;
-background:#1e293b;
-padding:12px;
-border-radius:8px;
-margin-bottom:15px;
+background:#f1f5f9;
+padding:14px;
+border-radius:10px;
+margin-bottom:18px;
 line-height:1.6;
-color:#e2e8f0;
-border:1px solid #334155;
+border:1px solid #e2e8f0;
 }
 
 .countdown{
 text-align:center;
-font-size:18px;
+font-size:17px;
 margin-bottom:20px;
 font-weight:600;
-color:#38bdf8;
+color:#2563eb;
 }
 
 label{
 font-size:14px;
-color:#e2e8f0;
+color:#334155;
 }
 
 input{
 width:100%;
-padding:11px;
+padding:12px;
 margin-top:6px;
 margin-bottom:14px;
-border-radius:6px;
-border:1px solid #334155;
-background:#020617;
-color:white;
+border-radius:8px;
+border:1px solid #d1d5db;
+background:#ffffff;
 transition:0.25s;
+font-size:14px;
 }
 
 input:focus{
 outline:none;
-border:1px solid #38bdf8;
-box-shadow:0 0 6px rgba(56,189,248,0.6);
+border:1px solid #2563eb;
+box-shadow:0 0 4px rgba(37,99,235,0.3);
 }
 
 button{
 width:100%;
 padding:13px;
 margin-top:10px;
-background:linear-gradient(90deg,#22c55e,#16a34a);
+background:#2563eb;
+color:white;
 border:none;
-border-radius:7px;
+border-radius:8px;
 font-size:16px;
 font-weight:600;
 cursor:pointer;
@@ -107,8 +103,7 @@ transition:0.25s;
 }
 
 button:hover{
-transform:scale(1.03);
-box-shadow:0 0 10px rgba(34,197,94,0.7);
+background:#1d4ed8;
 }
 
 .rules-link{
@@ -116,7 +111,7 @@ display:block;
 margin-top:8px;
 margin-bottom:12px;
 text-align:center;
-color:#60a5fa;
+color:#2563eb;
 text-decoration:none;
 font-size:14px;
 }
@@ -128,30 +123,9 @@ text-decoration:underline;
 .success{
 display:none;
 text-align:center;
-color:#22c55e;
+color:#16a34a;
 margin-top:16px;
 font-weight:500;
-}
-
-/* Coordinator section */
-
-.coordinators{
-margin-top:20px;
-background:#1e293b;
-padding:12px;
-border-radius:8px;
-font-size:14px;
-border:1px solid #334155;
-}
-
-.coordinators h4{
-margin:5px 0 8px 0;
-text-align:center;
-}
-
-.coordinators p{
-margin:3px 0;
-text-align:center;
 }
 
 </style>
@@ -296,4 +270,5 @@ form.reset();
 
 </body>
 </html>
+
 
