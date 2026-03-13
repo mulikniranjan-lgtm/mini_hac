@@ -2,8 +2,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AI Mini Hackathon Registration</title>
-
 <style>
 
 *{
@@ -23,11 +21,13 @@ color:#1e293b;
 
 .container{
 background:#ffffff;
-padding:40px;
+padding:35px;
 border-radius:16px;
-width:450px;
+width:90%;
+max-width:450px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 transition:0.3s;
+border-top:5px solid #2563eb;
 }
 
 .container:hover{
@@ -57,9 +57,20 @@ line-height:1.6;
 border:1px solid #e2e8f0;
 }
 
+input{
+width:100%;
+padding:14px;
+margin-top:6px;
+margin-bottom:14px;
+border-radius:8px;
+border:1px solid #d1d5db;
+background:#ffffff;
+font-size:16px;
+}
+
 .countdown{
 text-align:center;
-font-size:17px;
+font-size:16px;
 margin-bottom:20px;
 font-weight:600;
 color:#2563eb;
@@ -126,6 +137,60 @@ text-align:center;
 color:#16a34a;
 margin-top:16px;
 font-weight:500;
+}
+
+
+.header h1{
+margin:0;
+}
+
+.header h3{
+margin:4px 0 0 0;
+color:#e0f2fe;
+}
+
+.badge{
+position:fixed;
+top:20px;
+left:20px;
+background:#2563eb;
+color:white;
+padding:8px 14px;
+border-radius:20px;
+font-size:13px;
+font-weight:600;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+@media (max-width:600px){
+
+.container{
+padding:25px;
+}
+
+h1{
+font-size:22px;
+}
+
+h3{
+font-size:16px;
+}
+
+.event-info{
+font-size:13px;
+}
+
+button{
+padding:14px;
+font-size:15px;
+}
+
+.badge{
+top:10px;
+left:10px;
+font-size:12px;
+}
+
 }
 
 </style>
@@ -198,10 +263,12 @@ form.reset();
 
 </script>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
-
+<div class="badge">AI Hackathon 2026</div>
 <div class="container">
 
 <h1>AI MINI HACKATHON</h1>
@@ -217,27 +284,27 @@ form.reset();
 <div id="countdown" class="countdown"></div>
 
 <form>
-
+    
 <label>Team Name</label>
-<input type="text" required>
+<input type="text" placeholder="enter team name" required>
 
 <label>Team Leader Name</label>
-<input type="text" required>
+<input type="text" placeholder="enter leader name"  required>
 
 <label>Leader Email</label>
-<input type="email" required>
+<input type="email" placeholder="enter email" required>
 
 <label>Leader Phone</label>
-<input type="tel" required>
+<input type="tel" placeholder="enter phone number" required>
 
 <label>Member 2 Name</label>
-<input type="text" required>
+<input type="text" placeholder="enter member 2 name" required>
 
 <label>College Name</label>
-<input type="text" required>
+<input type="text" placeholder="enter college name" required>
 
 <label>Department</label>
-<input type="text" required>
+<input type="text" placeholder="enter department" required>
 
 <label>Payment Screenshot</label>
 <input type="file" required>
@@ -258,17 +325,18 @@ form.reset();
 
 <h4>Event Coordinators</h4>
 
-<p><b>Faculty Coordinator:</b> Prof. XYZ</p>
+<p><b>Faculty Coordinator:</b> Prof. P.S. Purohit</p>
+<p><b>Contact:</b> 9552551884</p>
 
 <p><b>Student Coordinators:</b></p>
-<p>1. Student Name 1</p>
-<p>2. Student Name 2</p>
-
+<p><b>1. Limras S Bagwan</b></p>
+<p><b>Contact:</b> 788815869</p>
+<p><b>2. Abhishek J Rupnawar</b></p>
+<p><b>Contact:</b> 9604543761</p>
 </div>
 
 </div>
 
 </body>
 </html>
-
 
