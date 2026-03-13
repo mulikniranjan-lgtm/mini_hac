@@ -105,7 +105,7 @@ font-size:13px;
 
 <script>
 
-/* Countdown */
+document.addEventListener("DOMContentLoaded", function(){
 
 const eventDate = new Date("March 27, 2026 09:00:00").getTime();
 
@@ -123,6 +123,8 @@ document.getElementById("countdown").innerHTML =
 "⏳ Event Starts In: "+days+"d "+hours+"h "+minutes+"m "+seconds+"s";
 
 },1000);
+
+});
 
 </script>
 
@@ -188,28 +190,36 @@ document.getElementById("countdown").innerHTML =
 
 <script>
 
+document.addEventListener("DOMContentLoaded", function(){
+
 const scriptURL="https://script.google.com/macros/s/AKfycbx0nN2YgnoM_eoNJOozq_uYV1LETBvT8dfq1lzqnNm_6Q4QvbLf4wEFjJRftHfL1OrC/exec";
 
-document.getElementById("regForm").addEventListener("submit",function(e){
+const form=document.getElementById("regForm");
+
+form.addEventListener("submit",function(e){
 
 e.preventDefault();
 
-const formData=new FormData(this);
+const formData=new FormData(form);
 
 fetch(scriptURL,{
 method:"POST",
 body:formData
 })
-.then(res=>{
+.then(res=>res.text())
+.then(()=>{
 document.getElementById("successMsg").style.display="block";
+form.reset();
 })
-.catch(err=>console.log(err));
+.catch(err=>alert("Submission failed"));
+
+});
 
 });
 
 </script>
-
 </body>
 </html>
+
 
 
