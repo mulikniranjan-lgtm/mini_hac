@@ -1,10 +1,6 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-
-*{
+<!DOCTYPE html>  <html>  
+<head>  
+<style>  *{
 box-sizing:border-box;
 }
 
@@ -139,7 +135,6 @@ margin-top:16px;
 font-weight:500;
 }
 
-
 .header h1{
 margin:0;
 }
@@ -236,128 +231,82 @@ font-size:12px;
 
 }
 
-</style>
-
-<script>
-
-/* Countdown Timer */
-
-const eventDate = new Date("March 27, 2026 09:00:00").getTime();
-
-setInterval(function(){
-
-const now = new Date().getTime();
-const distance = eventDate - now;
-
-const days = Math.floor(distance/(1000*60*60*24));
-const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
-const seconds = Math.floor((distance%(1000*60))/1000);
-
-document.getElementById("countdown").innerHTML =
-"⏳ Event Starts In: " +
-days + "d " +
-hours + "h " +
-minutes + "m " +
-seconds + "s";
-
-},1000);
-
-</script>
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function(){
-
-const scriptURL = "https://script.google.com/macros/s/AKfycbx0nN2YgnoM_eoNJOozq_uYV1LETBvT8dfq1lzqnNm_6Q4QvbLf4wEFjJRftHfL1OrC/exec";
-
-const form = document.querySelector("form");
-
-form.addEventListener("submit", function(e){
-
-e.preventDefault();
-
-const submitBtn = document.querySelector("button");
-const agree = document.getElementById("agree");
-
-// Extra safety check
-if(!agree.checked){
-alert("Please accept the rules before submitting.");
-return;
-}
-
-// Disable button immediately
-submitBtn.disabled = true;
-submitBtn.innerText = "Submitting...";
-
-const inputs = document.querySelectorAll("input");
-
-const data = {
-team: inputs[0].value,
-leader: inputs[1].value,
-email: inputs[2].value,
-phone: inputs[3].value,
-member2: inputs[4].value,
-college: inputs[5].value,
-department: inputs[6].value
-};
-
-fetch(scriptURL,{
-method:"POST",
-body:JSON.stringify(data)
-})
-.then(response => response.text())
-.then(data => {
-document.getElementById("successMsg").style.display="block";
-form.reset();
-
-// Keep button disabled OR enable again if you want
-submitBtn.innerText = "Submitted ✅";
-})
-.catch(error => {
-console.error("Error!", error);
-
-// Re-enable if error occurs
-submitBtn.disabled = false;
-submitBtn.innerText = "Register Team";
-});
-
-});
-
-</script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-</head>
-
-<body>
-<div class="badge">AI Hackathon 2026</div>
-<div class="container">
-
-<h1>AI MINI HACKATHON</h1>
-<h3>Spectrum 2k26</h3>
-
-<div class="event-info">
-📅 Date: 27 March 2026 <br>
-⏰ Duration: 2 Hours Development + 1 Hour Presentation <br>
-👨‍💻 Team Size: 2 Members <br>
-💰 Entry Fee: ₹200 per team
-</div>
-<div class="payment-box">
-
-<h4>Scan to Pay ₹200</h4>
-
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi%3A%2F%2Fpay%3Fpa%3Dabhishekrupnawar7%40okicici%26pn%3DAI%2520Hackathon%26am%3D200%26cu%3DINR" alt="UPI QR">
-
-<p>UPI ID: abhishekrupnawar7@okicici</p>
-<p>Amount: ₹200 (Auto Filled)</p>
-
-</div>
-<div id="countdown" class="countdown"></div>
-
-<form>
-    
-<label>Team Name</label>
+</style>  <script>  
+  
+/* Countdown Timer */  
+  
+const eventDate = new Date("March 27, 2026 09:00:00").getTime();  
+  
+setInterval(function(){  
+  
+const now = new Date().getTime();  
+const distance = eventDate - now;  
+  
+const days = Math.floor(distance/(1000*60*60*24));  
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));  
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));  
+const seconds = Math.floor((distance%(1000*60))/1000);  
+  
+document.getElementById("countdown").innerHTML =  
+"⏳ Event Starts In: " +  
+days + "d " +  
+hours + "h " +  
+minutes + "m " +  
+seconds + "s";  
+  
+},1000);  
+  
+</script>  <script>  
+  
+document.addEventListener("DOMContentLoaded", function(){  
+  
+const scriptURL = "https://script.google.com/macros/s/AKfycbx0nN2YgnoM_eoNJOozq_uYV1LETBvT8dfq1lzqnNm_6Q4QvbLf4wEFjJRftHfL1OrC/exec";  
+  
+const form = document.querySelector("form");  
+  
+form.addEventListener("submit", function(e){  
+  
+e.preventDefault();  
+  
+const inputs = document.querySelectorAll("input");  
+  
+const data = {  
+team: inputs[0].value,  
+leader: inputs[1].value,  
+email: inputs[2].value,  
+phone: inputs[3].value,  
+member2: inputs[4].value,  
+college: inputs[5].value,  
+department: inputs[6].value  
+};  
+  
+fetch(scriptURL,{  
+method:"POST",  
+body:JSON.stringify(data)  
+})  
+.then(response => response.text())  
+.then(data => {  
+document.getElementById("successMsg").style.display="block";  
+form.reset();  
+})  
+.catch(error => console.error("Error!", error));  
+  
+});  
+  
+});  
+  
+</script>  <meta name="viewport" content="width=device-width, initial-scale=1.0">  </head>  <body>  
+<div class="badge">AI Hackathon 2026</div>  
+<div class="container">  <h1>AI MINI HACKATHON</h1>  
+<h3>Spectrum 2k26</h3>  <div class="event-info">  
+📅 Date: 27 March 2026 <br>  
+⏰ Duration: 2 Hours Development + 1 Hour Presentation <br>  
+👨‍💻 Team Size: 2 Members <br>  
+💰 Entry Fee: ₹200 per team  
+</div>  
+<div class="payment-box">  <h4>Scan to Pay ₹200</h4>  <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi%3A%2F%2Fpay%3Fpa%3Dabhishekrupnawar7%40okicici%26pn%3DAI%2520Hackathon%26am%3D200%26cu%3DINR" alt="UPI QR">  <p>UPI ID: abhishekrupnawar7@okicici</p>  
+<p>Amount: ₹200 (Auto Filled)</p>  </div>  
+<div id="countdown" class="countdown"></div>  <form>  <label>Team Name</label>
 <input type="text" placeholder="enter team name" required>
 
 <label>Team Leader Name</label>
@@ -378,41 +327,23 @@ submitBtn.innerText = "Register Team";
 <label>Department</label>
 <input type="text" placeholder="enter department" required>
 
-<a class="rules-link" href="SPECTRUM_2K26_.pdf" target="_blank">
+<a class="rules-link" href="SPECTRUM_2K26_.pdf" target="_blank">  
 📄 Download Rules and Regulations
-</a>
-    
+
 <label style="display:flex; align-items:center; gap:8px; font-size:13px;">
 <input type="checkbox" id="agree" required>
 I have read and agree to the rules & regulations
 </label>
+    
+</a>  <button type="submit">Register Team</button>
 
-<button type="submit">Register Team</button>
-
-<div id="successMsg" class="success">
-✅ Registration submitted successfully!
-</div>
-
-</form>
-
-<div class="coordinators">
-
-<h4>Event Coordinators</h4>
-
-<p><b>Faculty Coordinator:</b> Prof. P.S. Purohit</p>
-<p><b>Contact:</b> 9552551884</p>
-
-<p><b>Student Coordinators:</b></p>
-<p><b>1. Limras S Bagwan</b></p>
-<p><b>Contact:</b> 7888157869</p>
-<p><b>2. Abhishek J Rupnawar</b></p>
-<p><b>Contact:</b> 9604543761</p>
-</div>
-
-</div>
-
-</body>
+<div id="successMsg" class="success">  
+✅ Registration submitted successfully!  
+</div>  </form>  <div class="coordinators">  <h4>Event Coordinators</h4>  <p><b>Faculty Coordinator:</b> Prof. P.S. Purohit</p>  
+<p><b>Contact:</b> 9552551884</p>  <p><b>Student Coordinators:</b></p>  
+<p><b>1. Limras S Bagwan</b></p>  
+<p><b>Contact:</b> 7888157869</p>  
+<p><b>2. Abhishek J Rupnawar</b></p>  
+<p><b>Contact:</b> 9604543761</p>  
+</div>  </div>  </body>  
 </html>
-
-
-
