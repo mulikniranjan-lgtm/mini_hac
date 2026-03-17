@@ -277,6 +277,19 @@ form.addEventListener("submit", function(e){
 
 e.preventDefault();
 
+const submitBtn = document.querySelector("button");
+const agree = document.getElementById("agree");
+
+// Extra safety check
+if(!agree.checked){
+alert("Please accept the rules before submitting.");
+return;
+}
+
+// Disable button immediately
+submitBtn.disabled = true;
+submitBtn.innerText = "Submitting...";
+
 const inputs = document.querySelectorAll("input");
 
 const data = {
@@ -297,9 +310,16 @@ body:JSON.stringify(data)
 .then(data => {
 document.getElementById("successMsg").style.display="block";
 form.reset();
-})
-.catch(error => console.error("Error!", error));
 
+// Keep button disabled OR enable again if you want
+submitBtn.innerText = "Submitted ✅";
+})
+.catch(error => {
+console.error("Error!", error);
+
+// Re-enable if error occurs
+submitBtn.disabled = false;
+submitBtn.innerText = "Register Team";
 });
 
 });
@@ -361,6 +381,11 @@ form.reset();
 <a class="rules-link" href="SPECTRUM_2K26_.pdf" target="_blank">
 📄 Download Rules and Regulations
 </a>
+    
+<label style="display:flex; align-items:center; gap:8px; font-size:13px;">
+<input type="checkbox" id="agree" required>
+I have read and agree to the rules & regulations
+</label>
 
 <button type="submit">Register Team</button>
 
